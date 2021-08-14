@@ -1,0 +1,75 @@
+@mixin BackGroundOpacity() {
+  @for $i from 1 through 100 {
+    .opacity-#{$i} {
+      opacity: $i * 1%;
+    }
+  }
+}
+
+@include BackGroundOpacity();
+
+.heatmap-box {
+  background-color: lightgrey;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.heatmap-box:hover {
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.empty {
+  background-color: #f0f0f0;
+}
+.blank {
+  background-color: #f0f0f0;
+}
+
+.month-title {
+  text-align: center;
+  color: gray;
+}
+
+.month-wrapper.mon-4 {
+  width: 80px;
+  margin: 2px;
+  flex-shrink: 0;
+}
+.month-wrapper.mon-5 {
+  flex-shrink: 0;
+  width: 100px;
+  margin: 2px;
+}
+.month-wrapper.mon-6 {
+  flex-shrink: 0;
+  width: 120px;
+  margin: 2px;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-content: flex-start;
+  height: 140px;
+}
+
+.heatmap {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.day-label {
+  margin-top: 21px;
+  color: gray;
+}
+
+.no-bg {
+  background-color: white;
+}

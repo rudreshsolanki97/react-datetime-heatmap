@@ -1,0 +1,356 @@
+.opacity-1 {
+  opacity: 1%; }
+
+.opacity-2 {
+  opacity: 2%; }
+
+.opacity-3 {
+  opacity: 3%; }
+
+.opacity-4 {
+  opacity: 4%; }
+
+.opacity-5 {
+  opacity: 5%; }
+
+.opacity-6 {
+  opacity: 6%; }
+
+.opacity-7 {
+  opacity: 7%; }
+
+.opacity-8 {
+  opacity: 8%; }
+
+.opacity-9 {
+  opacity: 9%; }
+
+.opacity-10 {
+  opacity: 10%; }
+
+.opacity-11 {
+  opacity: 11%; }
+
+.opacity-12 {
+  opacity: 12%; }
+
+.opacity-13 {
+  opacity: 13%; }
+
+.opacity-14 {
+  opacity: 14%; }
+
+.opacity-15 {
+  opacity: 15%; }
+
+.opacity-16 {
+  opacity: 16%; }
+
+.opacity-17 {
+  opacity: 17%; }
+
+.opacity-18 {
+  opacity: 18%; }
+
+.opacity-19 {
+  opacity: 19%; }
+
+.opacity-20 {
+  opacity: 20%; }
+
+.opacity-21 {
+  opacity: 21%; }
+
+.opacity-22 {
+  opacity: 22%; }
+
+.opacity-23 {
+  opacity: 23%; }
+
+.opacity-24 {
+  opacity: 24%; }
+
+.opacity-25 {
+  opacity: 25%; }
+
+.opacity-26 {
+  opacity: 26%; }
+
+.opacity-27 {
+  opacity: 27%; }
+
+.opacity-28 {
+  opacity: 28%; }
+
+.opacity-29 {
+  opacity: 29%; }
+
+.opacity-30 {
+  opacity: 30%; }
+
+.opacity-31 {
+  opacity: 31%; }
+
+.opacity-32 {
+  opacity: 32%; }
+
+.opacity-33 {
+  opacity: 33%; }
+
+.opacity-34 {
+  opacity: 34%; }
+
+.opacity-35 {
+  opacity: 35%; }
+
+.opacity-36 {
+  opacity: 36%; }
+
+.opacity-37 {
+  opacity: 37%; }
+
+.opacity-38 {
+  opacity: 38%; }
+
+.opacity-39 {
+  opacity: 39%; }
+
+.opacity-40 {
+  opacity: 40%; }
+
+.opacity-41 {
+  opacity: 41%; }
+
+.opacity-42 {
+  opacity: 42%; }
+
+.opacity-43 {
+  opacity: 43%; }
+
+.opacity-44 {
+  opacity: 44%; }
+
+.opacity-45 {
+  opacity: 45%; }
+
+.opacity-46 {
+  opacity: 46%; }
+
+.opacity-47 {
+  opacity: 47%; }
+
+.opacity-48 {
+  opacity: 48%; }
+
+.opacity-49 {
+  opacity: 49%; }
+
+.opacity-50 {
+  opacity: 50%; }
+
+.opacity-51 {
+  opacity: 51%; }
+
+.opacity-52 {
+  opacity: 52%; }
+
+.opacity-53 {
+  opacity: 53%; }
+
+.opacity-54 {
+  opacity: 54%; }
+
+.opacity-55 {
+  opacity: 55%; }
+
+.opacity-56 {
+  opacity: 56%; }
+
+.opacity-57 {
+  opacity: 57%; }
+
+.opacity-58 {
+  opacity: 58%; }
+
+.opacity-59 {
+  opacity: 59%; }
+
+.opacity-60 {
+  opacity: 60%; }
+
+.opacity-61 {
+  opacity: 61%; }
+
+.opacity-62 {
+  opacity: 62%; }
+
+.opacity-63 {
+  opacity: 63%; }
+
+.opacity-64 {
+  opacity: 64%; }
+
+.opacity-65 {
+  opacity: 65%; }
+
+.opacity-66 {
+  opacity: 66%; }
+
+.opacity-67 {
+  opacity: 67%; }
+
+.opacity-68 {
+  opacity: 68%; }
+
+.opacity-69 {
+  opacity: 69%; }
+
+.opacity-70 {
+  opacity: 70%; }
+
+.opacity-71 {
+  opacity: 71%; }
+
+.opacity-72 {
+  opacity: 72%; }
+
+.opacity-73 {
+  opacity: 73%; }
+
+.opacity-74 {
+  opacity: 74%; }
+
+.opacity-75 {
+  opacity: 75%; }
+
+.opacity-76 {
+  opacity: 76%; }
+
+.opacity-77 {
+  opacity: 77%; }
+
+.opacity-78 {
+  opacity: 78%; }
+
+.opacity-79 {
+  opacity: 79%; }
+
+.opacity-80 {
+  opacity: 80%; }
+
+.opacity-81 {
+  opacity: 81%; }
+
+.opacity-82 {
+  opacity: 82%; }
+
+.opacity-83 {
+  opacity: 83%; }
+
+.opacity-84 {
+  opacity: 84%; }
+
+.opacity-85 {
+  opacity: 85%; }
+
+.opacity-86 {
+  opacity: 86%; }
+
+.opacity-87 {
+  opacity: 87%; }
+
+.opacity-88 {
+  opacity: 88%; }
+
+.opacity-89 {
+  opacity: 89%; }
+
+.opacity-90 {
+  opacity: 90%; }
+
+.opacity-91 {
+  opacity: 91%; }
+
+.opacity-92 {
+  opacity: 92%; }
+
+.opacity-93 {
+  opacity: 93%; }
+
+.opacity-94 {
+  opacity: 94%; }
+
+.opacity-95 {
+  opacity: 95%; }
+
+.opacity-96 {
+  opacity: 96%; }
+
+.opacity-97 {
+  opacity: 97%; }
+
+.opacity-98 {
+  opacity: 98%; }
+
+.opacity-99 {
+  opacity: 99%; }
+
+.opacity-100 {
+  opacity: 100%; }
+
+.heatmap-box {
+  background-color: lightgrey;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  text-align: center;
+  flex-shrink: 0; }
+
+.heatmap-box:hover {
+  border: 1px solid gray;
+  cursor: pointer; }
+
+.empty {
+  background-color: #f0f0f0; }
+
+.blank {
+  background-color: #f0f0f0; }
+
+.month-title {
+  text-align: center;
+  color: gray; }
+
+.month-wrapper.mon-4 {
+  width: 80px;
+  margin: 2px;
+  flex-shrink: 0; }
+
+.month-wrapper.mon-5 {
+  flex-shrink: 0;
+  width: 100px;
+  margin: 2px; }
+
+.month-wrapper.mon-6 {
+  flex-shrink: 0;
+  width: 120px;
+  margin: 2px; }
+
+.month {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-content: flex-start;
+  height: 140px; }
+
+.heatmap {
+  display: flex;
+  overflow-x: scroll; }
+
+.day-label {
+  margin-top: 21px;
+  color: gray; }
+
+.no-bg {
+  background-color: white; }

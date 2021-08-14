@@ -1,15 +1,34 @@
 {
   "name": "react-datetime-heatmap",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "version": "0.1.1",
+  "private": false,
+  "main": "./lib/cjs/heatmap.js",
+  "module": "./lib/esm/heatmap.js",
+  "types": "./lib/esm/heatmap.d.ts",
+  "files": [
+    "lib"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/node-logger": "^6.3.4",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/faker": "^5.5.7",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "faker": "^5.5.3",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -18,9 +37,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:css": "node-sass --watch src/scss -o src/css",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf lib && mkdir lib && mkdir lib/esm && mkdir lib/cjs",
+    "compile": "npm run clean && npm run build:css && npm run build:esm && npm run build:cjs",
+    "build:css": "node-sass src/scss -o src",
+    "build:esm": "tsc && cp src/**/*.css lib/esm",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs && cp src/**/*.css lib/cjs"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +64,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "react-tooltip": "^4.2.21"
   }
 }
