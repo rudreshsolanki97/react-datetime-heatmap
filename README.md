@@ -2,7 +2,7 @@
 
 Create heatmaps for a time-series data.
 
-![Main Image](./assets/example.png)
+![Main Image](https://raw.githubusercontent.com/rudreshsolanki97/react-datetime-heatmap/master/assets/example.png)
 
 ## Installation
 
