@@ -22,6 +22,9 @@ function App() {
         highlighColor="orange"
         from={new Date("2021-08-01")}
         to={new Date("2022-08-01")}
+        onSelect={(date) => {
+          console.log("selected heatmap", date);
+        }}
       />
     </div>
   );

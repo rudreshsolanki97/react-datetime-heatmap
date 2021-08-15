@@ -8,10 +8,7 @@ export interface MonthProp {
     };
     highlightColor: string;
     valueLabel?: string;
-}
-export declare class Month extends React.Component<MonthProp> {
-    constructor(props: MonthProp);
-    render(): JSX.Element;
+    onSelect?: (date: Date) => void;
 }
 export interface HeatMapProp {
     data: Array<{
@@ -22,8 +19,8 @@ export interface HeatMapProp {
     from?: Date;
     to?: Date;
     valueLabel?: string;
+    onSelect?: (date: Date) => void;
 }
-export declare const DayLabel: () => JSX.Element;
 interface HeatMapNodeData {
     value: number;
     relativePercent: number;
@@ -39,6 +36,11 @@ interface HeadMapData {
         };
     };
 }
+export declare class Month extends React.Component<MonthProp> {
+    constructor(props: MonthProp);
+    render(): JSX.Element;
+}
+export declare const DayLabel: () => JSX.Element;
 export declare class HeatMap extends React.Component<HeatMapProp> {
     constructor(props: HeatMapProp);
     fillData(data: HeadMapData, { from, to, max }: {

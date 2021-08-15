@@ -65,6 +65,7 @@ interface HeatMapProp {
   from?: Date;
   to?: Date;
   valueLabel?: string;
+  onSelect?: (date: Date) => void;
 }
 
 ```

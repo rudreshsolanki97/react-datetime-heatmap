@@ -51,6 +51,7 @@ export interface MonthProp {
   data: { [k: string]: HeatMapNodeData };
   highlightColor: string;
   valueLabel?: string;
+  onSelect?: (date: Date) => void;
 }
 
 function StepFunction(x: number, stepSize: number): number {
@@ -66,6 +67,7 @@ export interface HeatMapProp {
   from?: Date;
   to?: Date;
   valueLabel?: string;
+  onSelect?: (date: Date) => void;
 }
 
 interface HeatMapNodeData {
@@ -89,8 +91,8 @@ interface RenderHeatMapProps {
   data: HeadMapData;
   highlightColor: string;
   valueLabel?: string;
+  onSelect?: (date: Date) => void;
 }
-
 
 function FormatDate(
   year: number,
@@ -109,6 +111,7 @@ const HeatBox = (
     tooltip = "",
     opacity = 70,
     highlightColor = "gray",
+    onSelect,
   }: {
     label?: string;
     blank?: boolean;
@@ -116,6 +119,7 @@ const HeatBox = (
     className?: string;
     tooltip?: string;
     highlightColor?: string;
+    onSelect?: () => void;
   } = {
     label: "",
     blank: false,
@@ -130,6 +134,7 @@ const HeatBox = (
           data-tip={tooltip}
           style={{ backgroundColor: "lightgrey" }}
           className={"heatmap-box" + ` opacity-${opacity} ` + className}
+          onClick={() => onSelect && onSelect()}
         >
           {label}
         </div>
@@ -141,6 +146,7 @@ const HeatBox = (
         data-tip={tooltip}
         style={{ backgroundColor: highlightColor }}
         className={"heatmap-box" + ` opacity-${opacity} ` + className}
+        onClick={() => onSelect && onSelect()}
       >
         {label}
       </div>
@@ -191,6 +197,11 @@ export class Month extends React.Component<MonthProp> {
           )}`,
           highlightColor: this.props.highlightColor,
           opacity: parseInt(this.props.data[x].relativePercent.toFixed(0)),
+          onSelect: () =>
+            this.props.onSelect &&
+            this.props.onSelect(
+              new Date(`${this.props.year}-${this.props.month + 1}-${x}`)
+            ),
         })
       );
     });
@@ -234,6 +245,7 @@ class RenderHeatMap extends React.Component<RenderHeatMapProps> {
             year={parseInt(year)}
             highlightColor={this.props.highlightColor}
             valueLabel={this.props.valueLabel}
+            onSelect={this.props.onSelect}
           />
         );
       });
@@ -335,6 +347,7 @@ export class HeatMap extends React.Component<HeatMapProp> {
 
         <DayLabel />
         <RenderHeatMap
+          onSelect={this.props.onSelect}
           valueLabel={this.props.valueLabel}
           highlightColor={highlightColor}
           data={filledData}
