@@ -57,6 +57,41 @@ function StepFunction(x: number, stepSize: number): number {
   return Math.round(x / stepSize) * stepSize;
 }
 
+export interface HeatMapProp {
+  data: Array<{
+    date: Date;
+    value: number;
+  }>;
+  highlighColor?: string;
+  from?: Date;
+  to?: Date;
+  valueLabel?: string;
+}
+
+interface HeatMapNodeData {
+  value: number;
+  relativePercent: number;
+  entries: Array<{
+    date: Date;
+    value: number;
+  }>;
+}
+
+interface HeadMapData {
+  [k: string]: {
+    [k: string]: {
+      [k: string]: HeatMapNodeData;
+    };
+  };
+}
+
+interface RenderHeatMapProps {
+  data: HeadMapData;
+  highlightColor: string;
+  valueLabel?: string;
+}
+
+
 function FormatDate(
   year: number,
   month: number,
@@ -175,18 +210,6 @@ export class Month extends React.Component<MonthProp> {
     );
   }
 }
-
-export interface HeatMapProp {
-  data: Array<{
-    date: Date;
-    value: number;
-  }>;
-  highlighColor?: string;
-  from?: Date;
-  to?: Date;
-  valueLabel?: string;
-}
-
 export const DayLabel = () => (
   <div className="day-label">
     <HeatBox tooltip="test" className="no-bg" blank={true} label={"S"} />
@@ -198,29 +221,6 @@ export const DayLabel = () => (
     <HeatBox className="no-bg" blank={true} label={"S"} />
   </div>
 );
-
-interface HeatMapNodeData {
-  value: number;
-  relativePercent: number;
-  entries: Array<{
-    date: Date;
-    value: number;
-  }>;
-}
-
-interface HeadMapData {
-  [k: string]: {
-    [k: string]: {
-      [k: string]: HeatMapNodeData;
-    };
-  };
-}
-
-interface RenderHeatMapProps {
-  data: HeadMapData;
-  highlightColor: string;
-  valueLabel?: string;
-}
 
 class RenderHeatMap extends React.Component<RenderHeatMapProps> {
   render() {
