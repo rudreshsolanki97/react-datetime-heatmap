@@ -9,6 +9,8 @@ export interface MonthProp {
     highlightColor: string;
     valueLabel?: string;
     onSelect?: (date: Date) => void;
+    enableStep?: boolean;
+    stepSize?: number;
 }
 export interface HeatMapProp {
     data: Array<{
@@ -20,6 +22,8 @@ export interface HeatMapProp {
     to?: Date;
     valueLabel?: string;
     onSelect?: (date: Date) => void;
+    enableStep?: boolean;
+    stepSize?: number;
 }
 interface HeatMapNodeData {
     value: number;
