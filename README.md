@@ -66,6 +66,8 @@ interface HeatMapProp {
   to?: Date;
   valueLabel?: string;
   onSelect?: (date: Date) => void;
+  enableStep?: boolean;
+  stepSize?: number;
 }
 
 ```

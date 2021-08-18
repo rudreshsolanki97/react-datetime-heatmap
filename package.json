@@ -1,6 +1,6 @@
 {
   "name": "react-datetime-heatmap",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "main": "./lib/cjs/heatmap.js",
   "module": "./lib/esm/heatmap.js",
@@ -8,6 +8,10 @@
   "files": [
     "lib"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rudreshsolanki97/react-datetime-heatmap.get"
+  },
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

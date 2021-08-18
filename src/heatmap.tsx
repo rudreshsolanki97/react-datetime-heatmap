@@ -52,6 +52,8 @@ export interface MonthProp {
   highlightColor: string;
   valueLabel?: string;
   onSelect?: (date: Date) => void;
+  enableStep?: boolean;
+  stepSize?: number;
 }
 
 function StepFunction(x: number, stepSize: number): number {
@@ -68,6 +70,8 @@ export interface HeatMapProp {
   to?: Date;
   valueLabel?: string;
   onSelect?: (date: Date) => void;
+  enableStep?: boolean;
+  stepSize?: number;
 }
 
 interface HeatMapNodeData {
@@ -92,6 +96,8 @@ interface RenderHeatMapProps {
   highlightColor: string;
   valueLabel?: string;
   onSelect?: (date: Date) => void;
+  enableStep?: boolean;
+  stepSize?: number;
 }
 
 function FormatDate(
@@ -125,8 +131,6 @@ const HeatBox = (
     blank: false,
   }
 ) => {
-  opacity = StepFunction(opacity, 20);
-
   if (!blank) {
     if (opacity === 0) {
       return (
@@ -187,6 +191,11 @@ export class Month extends React.Component<MonthProp> {
     }
 
     Object.keys(this.props.data).forEach((x) => {
+      let opacity = parseInt(this.props.data[x].relativePercent.toFixed(0));
+      if (this.props.enableStep === true) {
+        opacity = StepFunction(opacity, this.props.stepSize || 20);
+      }
+
       days.push(
         HeatBox({
           tooltip: `${FormatDate(
@@ -196,7 +205,7 @@ export class Month extends React.Component<MonthProp> {
             `${this.props.data[x].value} ${this.props.valueLabel || "units"}`
           )}`,
           highlightColor: this.props.highlightColor,
-          opacity: parseInt(this.props.data[x].relativePercent.toFixed(0)),
+          opacity: opacity,
           onSelect: () =>
             this.props.onSelect &&
             this.props.onSelect(
@@ -246,6 +255,8 @@ class RenderHeatMap extends React.Component<RenderHeatMapProps> {
             highlightColor={this.props.highlightColor}
             valueLabel={this.props.valueLabel}
             onSelect={this.props.onSelect}
+            stepSize={this.props.stepSize}
+            enableStep={this.props.enableStep}
           />
         );
       });
@@ -315,7 +326,9 @@ export class HeatMap extends React.Component<HeatMapProp> {
       acc[`${year}`][`${month}`][`${day}`].value += cur.value;
       acc[`${year}`][`${month}`][`${day}`].entries.push(cur);
 
-      if (cur.value > max) max = cur.value;
+      const curr = acc[`${year}`][`${month}`][`${day}`].value;
+
+      if (curr > max) max = curr;
 
       return acc;
     }, {});
@@ -351,6 +364,8 @@ export class HeatMap extends React.Component<HeatMapProp> {
           valueLabel={this.props.valueLabel}
           highlightColor={highlightColor}
           data={filledData}
+          stepSize={this.props.stepSize}
+          enableStep={this.props.enableStep}
         />
       </div>
     );
